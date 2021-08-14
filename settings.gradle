@@ -1,0 +1,4 @@
+rootProject.name = "ArgumentBuilderExample"
+include ':app'
+include ':argument-annotation'
+include ':argument-processor'
