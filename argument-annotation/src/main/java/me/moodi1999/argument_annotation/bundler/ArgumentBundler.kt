@@ -1,13 +1,6 @@
 package me.moodi1999.argument_annotation.bundler
 
 import android.os.Bundle
-/**
- * With this class you can provide your own serialization and deserialization implementation to put
- * something into the bundle that is used by
- *
- * @author Hannes Dorfmann
- * @since 2.1
- */
 
 
 interface ArgumentBundler<T> {
