@@ -1,17 +1,26 @@
 package me.moodi1999.example
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
+import com.google.android.material.snackbar.Snackbar
+import me.moodi1999.argument_annotation.annotation.Argument
+import me.moodi1999.argument_annotation.annotation.ArgumentBuilderTarget
+import me.moodi1999.argument_annotation.annotation.SaveInstance
 import me.moodi1999.example.databinding.ActivityMainBinding
 
+@ArgumentBuilderTarget
 class MainActivity : AppCompatActivity() {
+
+    @Argument
+    @SaveInstance
+    var string: String = ""
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
