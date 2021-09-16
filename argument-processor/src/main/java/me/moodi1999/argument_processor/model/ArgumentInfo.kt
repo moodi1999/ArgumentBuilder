@@ -1,12 +1,14 @@
 package me.moodi1999.argument_processor.model
 
-import me.moodi1999.argument_annotation.annotation.ArgumentBundlerClass
-import me.moodi1999.argument_annotation.bundler.ArgumentBundler
-import kotlin.reflect.KClass
+data class ArgumentInfo(
+    val fieldInfo: TargetFieldInfo,
+    private val _key: String,
+    val isRequired: Boolean
+) : TargetFieldInfoInterface by fieldInfo {
 
-class ArgumentInfo(
-    val name: String,
-    val key: String,
-    val isRequired: Boolean,
-    val bundlerClass: String
-)
+    override val key: String by lazy {
+        _key.ifEmpty { "${name}_arg_key" }
+    }
+}
+
+fun ArgumentInfo.toNonNullArgument() = copy(fieldInfo = fieldInfo.toNonNullTargetField())
