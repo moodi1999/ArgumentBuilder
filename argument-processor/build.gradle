@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+    id 'kotlin-kapt'
 }
 
 java {
@@ -10,8 +11,12 @@ java {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     implementation project(path: ':argument-annotation')
+    implementation "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0"
     implementation 'com.squareup:kotlinpoet:1.9.0'
+    implementation group: 'com.squareup', name: 'kotlinpoet-metadata-specs', version: '1.9.0'
+    implementation group: 'com.squareup', name: 'kotlinpoet-classinspector-reflective', version: '1.9.0'
+    implementation group: 'com.squareup', name: 'kotlinpoet-classinspector-elements', version: '1.9.0'
+    implementation group: 'com.squareup', name: 'kotlinpoet-metadata', version: '1.9.0'
     implementation 'com.google.android:android:4.1.1.4'
 }

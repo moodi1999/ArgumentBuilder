@@ -1,14 +1,14 @@
 package me.moodi1999.argument_processor.model
 
-data class ArgumentInfo(
+data class SaveInstanceInfo(
     val fieldInfo: TargetFieldInfo,
     private val _key: String,
-    val isRequired: Boolean
 ) : TargetFieldInfoInterface by fieldInfo {
 
     override val key: String by lazy {
-        _key.ifEmpty { "${name}_arg_key" }
+        _key.ifEmpty { "${name}_saveInstance_key" }
     }
+
 }
 
-fun ArgumentInfo.toNonNullArgument() = copy(fieldInfo = fieldInfo.toNonNullTargetField())
+fun SaveInstanceInfo.toNonNullArgument() = copy(fieldInfo = fieldInfo.toNonNullTargetField())
