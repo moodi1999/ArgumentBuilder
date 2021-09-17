@@ -19,18 +19,12 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0"
     implementation 'com.squareup:kotlinpoet:1.9.0'
     implementation group: 'com.squareup', name: 'kotlinpoet-metadata-specs', version: '1.9.0'
-    implementation group: 'com.squareup', name: 'kotlinpoet-classinspector-reflective', version: '1.9.0'
     implementation group: 'com.squareup', name: 'kotlinpoet-classinspector-elements', version: '1.9.0'
     implementation group: 'com.squareup', name: 'kotlinpoet-metadata', version: '1.9.0'
     implementation 'com.google.android:android:4.1.1.4'
 }
 
 publishing {
-    repositories {
-        maven {
-            url "file://C:/Users/Ahmadreza Moodi/.m2/repository"
-        }
-    }
     publications {
         testing(MavenPublication) {
             from components.java

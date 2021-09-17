@@ -19,11 +19,6 @@ dependencies {
 }
 
 publishing {
-    repositories {
-        maven {
-            url "file://C:/Users/Ahmadreza Moodi/.m2/repository"
-        }
-    }
     publications {
         testing(MavenPublication) {
             from components.java
