@@ -1,7 +1,7 @@
 package me.moodi1999.argument_processor.processor
 
 import com.squareup.kotlinpoet.metadata.KotlinPoetMetadataPreview
-import com.sun.jdi.connect.Connector
+import me.moodi1999.argument_annotation.annotation.Argument
 import me.moodi1999.argument_annotation.annotation.ArgumentBuilderTarget
 import me.moodi1999.argument_processor.utils.ProcessingException
 import me.moodi1999.argument_processor.processor.targetProcessor.TargetArgumentProcessor
@@ -19,7 +19,7 @@ import javax.tools.Diagnostic
 class Processor : AbstractProcessor() {
 
     override fun getSupportedAnnotationTypes() = mutableSetOf(
-        Connector.Argument::class.java.canonicalName,
+        Argument::class.java.canonicalName,
         ArgumentBuilderTarget::class.java.canonicalName,
     )
 
