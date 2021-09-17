@@ -18,9 +18,6 @@ class InherSecondFragment : SecondFragment() {
     var someTestyMap: Map<String, ParcelableClass>? = null
 
     @Argument
-    lateinit var someTestyClass: SomeTestyClass
-
-    @Argument
     override lateinit var test: TestSealedClass
 
 //

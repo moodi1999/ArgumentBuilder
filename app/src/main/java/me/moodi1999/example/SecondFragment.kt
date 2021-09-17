@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import me.moodi1999.argument_annotation.annotation.Argument
 import me.moodi1999.argument_annotation.annotation.ArgumentBuilderTarget
 import me.moodi1999.example.databinding.FragmentSecondBinding
@@ -13,8 +14,8 @@ import java.io.Serializable
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-@ArgumentBuilderTarget
-class SomeTestyClass(val a: Int) : Serializable
+//@ArgumentBuilderTarget
+//class SomeTestyClass(val a: Int) : Serializable
 
 @ArgumentBuilderTarget(includeParentsArgument = true)
 open class SecondFragment : Fragment() {
@@ -68,7 +69,7 @@ open class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            findNavController(this).navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
     }
 
