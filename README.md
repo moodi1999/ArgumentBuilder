@@ -1,5 +1,7 @@
 # Argument Builder
 
+[![](https://jitpack.io/v/moodi1999/ArgumentBuilder.svg)](https://jitpack.io/#moodi1999/ArgumentBuilder)
+
 #### WIP...
 
 Annotation Processor for creating android Activity/Fragment arguments bundle.
